@@ -1,0 +1,52 @@
+d3.select("#id") will query to return object or group of all with that id
+--select only returns you one element, if you want all elements that can do selectAll 
+d3.select("#id").node() to get actual line of code 
+
+can change the text: 
+d3.select("#main")
+.text("Here is some new text!")
+// changes text
+
+d3.select("#main")
+.style("color", "blue")
+
+d3.select("h1")
+.text("Please click on me")
+.style("color", "red")
+
+d3.select("h1")
+.on("click", () => alert("hi"))
+
+
+********************************************************************************************
+
+d3.select("ol")
+.selectAll("li")
+.data(quotes)
+.enter() 
+.append("li")
+    .text(d => d)
+
+**common d3 code!^
+**d3 looks at difference between # enter nodes and # data points and # of elements. 
+    --selectAll is an empty selection on an element (li) that isn't on the DOM yet - it is a placeholder for element about to be created. 
+    --(so if there are no elements for the data points, then they will be created by append)
+    --data is most important method in d3 -- makes collection of elements by joining an array of data 
+    --d3 does the math for you to see if there is a mismatched element between element #s and data points and enter nodes and exit nodes. 
+    --exit is elements that exist but dont have enough data
+    --enter is when theres more data that exists than elements on the page (like when the list ol is empty with no li tags)
+**the arrows is a mapping function
+    -- shorthand for a callback function like: 
+        .text(function(d) { return d; })
+**enter() function is important
+
+ARTICLE TO READ: https://bost.ocks.org/mike/join/
+
+********************************************************************************************
+scalable vector graphics = SVG
+
+<circle cx="100" cy="100" r="50" fill="blue"></circle>
+<circle cx="200" cy="0" r="100" fill="red" stroke="orange" stroke-width="5"></circle>
+<line x1="0" y1="0" x2="100" y2="100" stroke="green" stroke-width="10"></line>
+<rect width="400" height="400" x="100" y="100"></rect>
+
